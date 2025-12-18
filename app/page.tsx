@@ -12,8 +12,8 @@ const SLIDES = [
   },
   {
     label: "CROCS SELECTION",
-    title: "Classic & Mega Crush",
-    subtitle: "From clean white classics to chunky platforms.",
+    title: "Classic · Platform · Mega Crush",
+    subtitle: "From clean classics to bold platforms and statement pairs.",
     img: "/hero2.jpg",
   },
   {
@@ -63,15 +63,12 @@ export default function Home() {
             >
               Birkenstock
             </a>
-
-            {/* ✅ SIZE LINK */}
             <a
               href="/size"
               className="uppercase tracking-[0.18em] text-[#C8B79A] hover:text-[#F5E9D3]"
             >
               Size
             </a>
-
             <a
               href="/authenticity"
               className="uppercase tracking-[0.18em] text-[#C8B79A] hover:text-[#F5E9D3]"
@@ -88,10 +85,12 @@ export default function Home() {
 
           {/* RIGHT SIDE */}
           <div className="flex items-center gap-3">
+            {/* Cart (desktop only) */}
             <button className="hidden text-xs uppercase tracking-[0.18em] text-[#C8B79A] hover:text-[#F5E9D3] md:inline-block">
               Cart (0)
             </button>
 
+            {/* Hamburger (mobile only) */}
             <button
               className="md:hidden text-[#F5E9D3]"
               onClick={() => setIsMenuOpen((p) => !p)}
@@ -131,8 +130,6 @@ export default function Home() {
               >
                 Birkenstock
               </a>
-
-              {/* ✅ SIZE LINK */}
               <a
                 href="/size"
                 onClick={() => setIsMenuOpen(false)}
@@ -140,7 +137,6 @@ export default function Home() {
               >
                 Size
               </a>
-
               <a
                 href="/authenticity"
                 onClick={() => setIsMenuOpen(false)}
@@ -196,16 +192,34 @@ export default function Home() {
               <p className="mt-3 max-w-xl text-sm md:text-base text-[#E8DCC2]">
                 {slide.subtitle}
               </p>
+
+              {/* ✅ CTA buttons only on first slide */}
+              {i === 0 && (
+                <>
+                  <div className="mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.18em]">
+                    <a
+                      href="/crocs"
+                      className="bg-[#F5E9D3] px-6 py-2 text-[#050505] hover:bg-[#E8DCC2] transition"
+                    >
+                      Shop Crocs
+                    </a>
+
+                    <a
+                      href="/birkenstock"
+                      className="border border-[#F5E9D3] px-6 py-2 text-[#F5E9D3] hover:bg-[#F5E9D3]/10 transition"
+                    >
+                      Shop Birkenstock
+                    </a>
+                  </div>
+
+                  <div className="mt-6 text-[10px] uppercase tracking-[0.3em] text-[#9c8f7a]">
+                    Scroll to explore ↓
+                  </div>
+                </>
+              )}
             </div>
           </section>
         ))}
 
-        <footer className="border-t border-[#2e2a24] bg-[#050505] py-10">
-          <div className="mx-auto max-w-6xl px-4 text-sm text-[#C8B79A]">
-            © {new Date().getFullYear()} STORE OVERSIZED
-          </div>
-        </footer>
-      </main>
-    </div>
-  );
-}
+        {/* FOOTER */}
+        <footer className="border-t border-[#2e
