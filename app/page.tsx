@@ -12,8 +12,8 @@ const SLIDES = [
   },
   {
     label: "CROCS SELECTION",
-    title: "Classic · Platform · Mega Crush",
-    subtitle: "From clean classics to bold platforms and statement pairs.",
+    title: "Classic & Mega Crush",
+    subtitle: "From clean white classics to chunky platforms.",
     img: "/hero2.jpg",
   },
   {
@@ -63,12 +63,15 @@ export default function Home() {
             >
               Birkenstock
             </a>
+
+            {/* SIZE LINK */}
             <a
               href="/size"
               className="uppercase tracking-[0.18em] text-[#C8B79A] hover:text-[#F5E9D3]"
             >
               Size
             </a>
+
             <a
               href="/authenticity"
               className="uppercase tracking-[0.18em] text-[#C8B79A] hover:text-[#F5E9D3]"
@@ -85,12 +88,10 @@ export default function Home() {
 
           {/* RIGHT SIDE */}
           <div className="flex items-center gap-3">
-            {/* Cart (desktop only) */}
             <button className="hidden text-xs uppercase tracking-[0.18em] text-[#C8B79A] hover:text-[#F5E9D3] md:inline-block">
               Cart (0)
             </button>
 
-            {/* Hamburger (mobile only) */}
             <button
               className="md:hidden text-[#F5E9D3]"
               onClick={() => setIsMenuOpen((p) => !p)}
@@ -130,6 +131,7 @@ export default function Home() {
               >
                 Birkenstock
               </a>
+
               <a
                 href="/size"
                 onClick={() => setIsMenuOpen(false)}
@@ -137,6 +139,7 @@ export default function Home() {
               >
                 Size
               </a>
+
               <a
                 href="/authenticity"
                 onClick={() => setIsMenuOpen(false)}
@@ -193,7 +196,7 @@ export default function Home() {
                 {slide.subtitle}
               </p>
 
-              {/* ✅ CTA buttons only on first slide */}
+              {/* ✅ ADDED: Buttons only on first slide */}
               {i === 0 && (
                 <>
                   <div className="mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.18em]">
@@ -221,5 +224,12 @@ export default function Home() {
           </section>
         ))}
 
-        {/* FOOTER */}
-        <footer className="border-t border-[#2e
+        <footer className="border-t border-[#2e2a24] bg-[#050505] py-10">
+          <div className="mx-auto max-w-6xl px-4 text-sm text-[#C8B79A]">
+            © {new Date().getFullYear()} STORE OVERSIZED
+          </div>
+        </footer>
+      </main>
+    </div>
+  );
+}
